@@ -47,6 +47,11 @@ node ("master") {
   stage('Check for leftover git processes') {
     echo "Sleep 10 seconds"
     sleep 10
-    sh "ps -ef | grep git"
+    
+    try { 
+      sh "ps -ef | grep git"
+    } catch (all) {
+          echo "No git processes running"
+    }
   }
 }
