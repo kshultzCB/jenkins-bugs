@@ -1,3 +1,3 @@
-# [JENKINS-44720](https://issues.jenkins-ci.org/browse/JENKINS-44720) - parallel submodule updates
+# Karl Branch: parallel submodule updates along with a bunch of junk files
 
 Perform submodule updates in parallel to reduce checkout time.
