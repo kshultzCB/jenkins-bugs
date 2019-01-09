@@ -10,7 +10,7 @@ properties([[$class: 'BuildDiscarderProperty',
 
 def branch = 'master'
 
-node {
+node ("windows-remote") {
   stage('Checkout') {
     checkout([$class: 'GitSCM',
                 branches: scm.branches,
