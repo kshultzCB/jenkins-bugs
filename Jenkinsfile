@@ -46,6 +46,8 @@ node ("linux-remote") {
   }
 
   stage('Check for leftover git processes') {
+    echo "Sleep 10 seconds"
+    sleep 10
     sh "ps -ef | grep git"
   }
 }
