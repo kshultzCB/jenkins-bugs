@@ -44,4 +44,8 @@ node ("linux-remote") {
     my_check.logContains(".*submodule-dir/JENKINS-52511 .*", 'Missing JENKINS-52511 submodule')
     my_check.logDoesNotContain(".*[+].*submodule-dir.*", 'Out of date submodule detected')
   }
+
+  stage('Check for leftover git processes') {
+    sh "ps -ef | grep git"
+  }
 }
