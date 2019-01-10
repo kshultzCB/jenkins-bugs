@@ -9,8 +9,8 @@ properties([[$class: 'BuildDiscarderProperty',
                 strategy: [$class: 'LogRotator', numToKeepStr: '10']]])
 
 def branch = 'master'
-
 node ("master") {
+  deleteDir()
   stage('Checkout') {
     checkout([$class: 'GitSCM',
                 branches: scm.branches,
