@@ -11,6 +11,7 @@ properties([[$class: 'BuildDiscarderProperty',
 def branch = 'master'
 
 node ("linux-remote") {
+  deleteDir()
   stage('Checkout') {
     checkout([$class: 'GitSCM',
                 branches: scm.branches,
